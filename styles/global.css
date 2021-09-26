@@ -23,6 +23,7 @@
   margin: 0 !important;
 }
 button {
+  cursor: pointer;
   font-family: "Montserrat", sans-serif;
 }
 
