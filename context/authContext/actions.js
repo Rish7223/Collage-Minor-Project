@@ -119,12 +119,15 @@ export async function dispatchGoogleSignIn(dispatch) {
     const provider = new GoogleAuthProvider();
     const response = await signInWithPopup(fireAuth, provider);
     dispatch({ type: AUTH_APP_LOADING, payload: true });
+    const isUser = await getUser(response.user.uid);
     // save user to db
-    const docRef = await addDoc(collection(fireDB, "users"), {
-      authUid: response.user.uid,
-      name: response.user.email,
-      classUid: null,
-    });
+    if (!isUser) {
+      await addDoc(collection(fireDB, "users"), {
+        authUid: response.user.uid,
+        name: response.user.email,
+        classUid: null,
+      });
+    }
     // findUser and login
     const authUser = await getUser(response.user.uid);
     dispatch({ type: USER_LOGIN, payload: authUser });
