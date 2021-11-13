@@ -5,6 +5,13 @@
 }
 
 /* global */
+
+.goBack {
+  text-decoration: none;
+  color: #000;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
 #alert {
   position: absolute;
   top: 5vh;
