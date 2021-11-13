@@ -14,7 +14,7 @@ const Login = () => {
   useEffect(() => {
     authenticateUser();
     if (authState.isAuthenticated) {
-      router.push("/");
+      router.push("https://uicminorproject.netlify.app/profile/profile.html");
     }
   }, [authState.isAuthenticated]);
   return authState.appLoading !== null && !authState.appLoading ? (

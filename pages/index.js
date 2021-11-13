@@ -15,17 +15,7 @@ export default function HomePage() {
   }, [authState.isAuthenticated]);
   console.log(authState.appLoading);
   return authState.appLoading !== null && !authState.appLoading ? (
-    <div id="home">
-      <p>Home page for UIC Website</p>
-      <p>welcome {authState.auth.user?.name}</p>
-      <button
-        onClick={() => {
-          signOut(fireAuth);
-        }}
-      >
-        signout
-      </button>
-    </div>
+    <div id="home">redirecting to profile page!</div>
   ) : (
     <AppLoading />
   );
