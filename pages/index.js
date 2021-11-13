@@ -11,6 +11,8 @@ export default function HomePage() {
     authenticateUser();
     if (authState.isAuthenticated !== null && !authState.isAuthenticated) {
       router.push("/login");
+    } else {
+      router.push("https://uicminorproject.netlify.app/profile/profile.html");
     }
   }, [authState.isAuthenticated]);
   console.log(authState.appLoading);
