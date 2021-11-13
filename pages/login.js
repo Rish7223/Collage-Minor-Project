@@ -23,9 +23,6 @@ const Login = () => {
         <title>Authentication | UIC Project</title>
       </Head>
       <div id="login">
-        <a href="https://uicminorproject.netlify.app/" className="goBack">
-          go back
-        </a>
         {authState.alert && <Alert message={authState.alert} />}
         <h2>Welcome to UIC Department</h2>
         <div className="container" id="container">
